@@ -129,7 +129,7 @@ metadata_agent:
 neutron:
   workers: 4
   default:
-    l3_ha_network_type: gre
+    l3_ha_network_type: vxlan
     debug: 'True'
 metadata:
   workers: 4
@@ -161,6 +161,7 @@ ml2:
     auto_bridge_add:
       br-physnet1: enp11s0f0
     bridge_mappings:
+      - "external:br-ex"
       - "physnet1:br-physnet1"
 
 dependencies:
